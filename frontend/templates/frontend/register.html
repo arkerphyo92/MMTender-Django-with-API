@@ -1,0 +1,55 @@
+{% extends "frontend/otherpage.html" %}
+
+{% block maincontent %}
+
+<style>
+    .centered-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150vh;
+        background-color: #f5f5f5; /* Light gray background for the entire page */
+    }
+    .card {
+        background-color: #ffffff; /* White background for the card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better look */
+        border-radius: 8px; /* Rounded corners */
+    }
+    .card-header {
+        background-color: #ffffff; /* Ensure header matches card background */
+        border-bottom: none; /* Remove default border */
+        text-align: center; /* Center the header text */
+    }
+    .card-body {
+        padding: 20px; /* Add padding inside the card */
+    }
+    .alert-success {
+        text-align: center; /* Center the success message */
+        margin: 20px 0; /* Add margin around the success message */
+    }
+</style>
+<div class="centered-form">
+    <div class="col-md-8 col-sm-12">
+        <div class="card border-0">
+            <div class="card-header" style="padding-top: 20px; padding-bottom: 20px;">
+                <h3>Register</h3>
+            </div>
+            <div class="card-body">
+                {% if success %} <!-- After successful submission, show this -->
+                    <div class="alert alert-success">
+                        Your account has been created successfully.
+                        <a href="{% url 'listings:tenders' %}">Go to the Dashboard</a>
+                    </div>
+                {% else %}
+                    <form action="{% url 'register' %}" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary" style="margin-top:10px;">Register</button>
+                        <a href="{% url 'listings:tenders' %}" class="btn btn-secondary" style="margin-top:10px;">Cancel</a>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

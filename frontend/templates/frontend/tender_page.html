@@ -1,0 +1,58 @@
+{% extends "frontend/alltenderspage.html"%}
+
+{% block maincontent %}
+<div class="col-md-8" style="margin-top:80px;">				
+	<div class="row">
+		
+			<div class="col-md-12 col-sm-12">
+				<div class="single-explore-item">
+					<div class="single-explore-txt bg-theme-1">
+						<h2>{{ tender.title }}</h2>
+						<p class="explore-rating-price">
+							<span class="explore-rating">512</span>
+							<a href="#"> {{ tender.type }}</a>
+							<span class="explore-price-box">
+								last date
+								<span class="explore-price">{{ tender.closedate }}</span>
+							</span>
+							<span>by {{ tender.author }}</span>
+						</p>
+						{% if tender.attimage %}<img src="{{ tender.attimage.url }}" alt="">{% endif %}
+						<div class="explore-person" style="margin-top:30px">
+							<div class="row">
+								<!-- First Column -->
+								<div class="col-md-6">
+									<ul class="list-group">
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fa-solid fa-unlock"></i>Tender Type : <strong>{{tender.type}}</strong></p></li>
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fa-solid fa-viruses"></i>Tender Field : <strong>{{tender.fields}}</strong></p></li>
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fa-solid fa-people-group"></i>Tender Company : <strong>{{tender.source_company}}</strong></p></li>
+										<li class="list-group-item"><p class="card-text flex-grow-1">Download PDF <a href="{{tender.attpdf.url}}" target="_blank"><i class="fa-solid fa-download fv-xs"></i></a></p></li>
+									</ul>
+								</div>
+								<!-- Second Column -->
+								<div class="col-md-6">
+									<ul class="list-group">
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fa-solid fa-earth-asia fv-lg"></i> State/Region: <strong>{{ tender.location }}</strong></p></li>
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fas fa-city fv-lg"></i> City: <strong>{{ tender.city }}</strong></p></li>
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fa-solid fa-clock fv-lg"></i> Tender Announced at <strong>{{ tender.opendate|date:"Y-m-d" }}</strong></p></li>
+										<li class="list-group-item"><p class="card-text flex-grow-1"><i class="fa-solid fa-clock fv-lg"></i> Tender Last Date <strong>{{ tender.closedate|date:"Y-m-d" }}</strong></p></li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<!-- First Column -->
+								<div class="col-md-12 col-sm-12">
+									<h4>Description:</h4>
+									{% autoescape off %}
+										{{ tender.description }}
+									{% endautoescape %}
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+</div>
+{% endblock %}

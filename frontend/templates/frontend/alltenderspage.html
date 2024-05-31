@@ -1,0 +1,31 @@
+{% extends "frontend/base.html" %}
+{% load static %}
+{% block title %}
+All Tenders
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="tenders-hero">
+	<div class="container">
+		<div class="tenders-hero-txt">
+			<h2>All Tenders Listings</h2>
+			<p>
+				Find by Organization, Tender Types, Tender Fields, and many more think in just One click 
+			</p>
+		</div>
+	</div>
+
+</section><!--/.welcome-hero-->
+<section id="explore">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            {% include "frontend/sidebar.html" %}
+            <!-- Main Content -->
+            {% block maincontent %}
+            {% endblock %}
+        </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/.explore-->
+{% endblock %}

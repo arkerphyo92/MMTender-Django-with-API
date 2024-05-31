@@ -1,0 +1,173 @@
+{% extends "frontend/alltenderspage.html"%}
+
+{% block maincontent %}
+<div class="col-md-8">				
+	<nav aria-label="Page navigation"  class="text-right">
+		<ul class="pagination">
+			{% if page_obj.has_previous %}
+				<li class="page-item">
+					<a class="page-link" href="?page=1" aria-label="First">
+						<span aria-hidden="true">&laquo;&laquo;</span>
+					</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+			{% else %}
+				<li class="page-item disabled">
+					<a class="page-link" href="#" aria-label="First">
+						<span aria-hidden="true">&laquo;&laquo;</span>
+					</a>
+				</li>
+				<li class="page-item disabled">
+					<a class="page-link" href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+			{% endif %}
+			{% for num in page_obj.paginator.page_range %}
+				{% if page_obj.number == num %}
+					<li class="page-item active">
+						<a class="page-link" href="#">{{ num }}</a>
+					</li>
+				{% else %}
+					<li class="page-item">
+						<a class="page-link" href="?page={{ num }}">{{ num }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+			{% if page_obj.has_next %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+						<span aria-hidden="true">&raquo;&raquo;</span>
+					</a>
+				</li>
+			{% else %}
+				<li class="page-item disabled">
+					<a class="page-link" href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+				<li class="page-item disabled">
+					<a class="page-link" href="#" aria-label="Last">
+						<span aria-hidden="true">&raquo;&raquo;</span>
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+<div>
+	<div class="row">
+		{% for tender in page_obj %}
+			<div class="col-md-12 col-sm-12">
+				<div class="single-explore-item">
+					<div class="single-explore-txt bg-theme-1">
+						<h2><a href="{% url 'tender_page' tender.id %}">{{ tender.title }}</a></h2>
+						<p class="explore-rating-price">
+							<span class="explore-rating">512</span>
+							<a href="#"> {{ tender.type }}</a>
+							<span class="explore-price-box">
+								last date
+								<span class="explore-price">{{ tender.closedate }}</span>
+							</span>
+							<span>by {{ tender.author }}</span>
+						</p>
+						<div class="explore-person">
+							<div class="row">
+								<div class="col-sm-12">
+										<p class="card-text flex-grow-1"><i class="fa-solid fa-earth-asia fv-lg"></i> State/Region: <strong>{{ tender.location }}</strong></p>
+										<p class="card-text flex-grow-1"><i class="fas fa-city fv-lg"></i> City: <strong>{{ tender.city }}</strong></p>
+										<p class="card-text flex-grow-1"><i class="fa-solid fa-clock fv-lg"></i> Tender Announced at <strong>{{ tender.opendate|date:"Y-m-d" }}</strong></p> 
+								</div>
+							</div>
+						</div>
+						<div class="explore-open-close-part">
+							<div class="row">
+								<div class="col-sm-5">
+									<a class="close-btn" href="{% url 'tender_page' tender.id %}">Read More</a>
+								</div>
+								<div class="col-sm-7">
+									<div class="explore-map-icon">
+										<a href="#"><i data-feather="map-pin"></i></a>
+										<a href="#"><i data-feather="upload"></i></a>
+										<a href="#"><i data-feather="heart"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<nav aria-label="Page navigation"  class="text-right">
+	<ul class="pagination">
+		{% if page_obj.has_previous %}
+			<li class="page-item">
+				<a class="page-link" href="?page=1" aria-label="First">
+					<span aria-hidden="true">&laquo;&laquo;</span>
+				</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+		{% else %}
+			<li class="page-item disabled">
+				<a class="page-link" href="#" aria-label="First">
+					<span aria-hidden="true">&laquo;&laquo;</span>
+				</a>
+			</li>
+			<li class="page-item disabled">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+		{% endif %}
+		{% for num in page_obj.paginator.page_range %}
+			{% if page_obj.number == num %}
+				<li class="page-item active">
+					<a class="page-link" href="#">{{ num }}</a>
+				</li>
+			{% else %}
+				<li class="page-item">
+					<a class="page-link" href="?page={{ num }}">{{ num }}</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+		{% if page_obj.has_next %}
+			<li class="page-item">
+				<a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+					<span aria-hidden="true">&raquo;&raquo;</span>
+				</a>
+			</li>
+		{% else %}
+			<li class="page-item disabled">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+			<li class="page-item disabled">
+				<a class="page-link" href="#" aria-label="Last">
+					<span aria-hidden="true">&raquo;&raquo;</span>
+				</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>
+</div>
+{% endblock %}

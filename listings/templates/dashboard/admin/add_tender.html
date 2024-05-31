@@ -1,0 +1,126 @@
+{% extends "../dashboard.html" %}
+
+{% block content %}
+<div class="mb-3">
+    <h4>Add New Tender</h4>
+</div>
+<!-- New Tender Form -->
+<div class="card border-0">
+    <div class="card-header">
+        <h5 class="card-title">
+            New Tender Form
+        </h5>
+    </div>
+    {% if success %}  <!-- After successful submitted the form, to show this -->
+    <div class="alert alert-success">
+      The new tender has been added successfully.
+      <a href="{% url 'listings:tenders' %}">Go to the Home Page</a>
+    </div>
+    {% else %} <!-- Add new tender -->
+    <div class="row">
+          <div class="card-body">
+            <form action="{% url 'listings:add_tender' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.title.label_tag }}
+                            {{ form.title }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.source_company.label_tag }}
+                            {{ form.source_company }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.source_ministry.label_tag }}
+                            {{ form.source_ministry }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.department.label_tag }}
+                            {{ form.department }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.fields.label_tag }}
+                            {{ form.fields }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.type.label_tag }}
+                            {{ form.type }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.opendate.label_tag }}
+                            {{ form.opendate }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.closedate.label_tag }}
+                            {{ form.closedate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.location.label_tag }}
+                            {{ form.location }}
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            {{ form.city.label_tag }}
+                            {{ form.city }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            {{ form.attpdf.label_tag }}
+                            {{ form.attpdf }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            {{ form.attimage.label_tag }}
+                            {{ form.attimage }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            {{ form.description.label_tag }}
+                            {{ form.description|safe }}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="{% url 'listings:tenders' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+          </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

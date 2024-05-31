@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'listings/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'listings/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#">Divergent</a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-item">
+                        <a href="{% url 'index' %}" target_blank="true" class="sidebar-link">
+                            <i class="fa-solid fa-earth-americas pe-2"></i>
+                            MM Tender Website
+                        </a>
+                    </li>
+                    <li class="sidebar-header">
+                        Admin Elements
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="{% url 'listings:dashboard' %}" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#tenders" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-gavel pe-2"></i>
+                            Tenders
+                        </a>
+                        <ul id="tenders" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="{% url 'listings:add_tender' %}" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Add New Tender</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{% url 'listings:tenders' %}" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Tenders </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#locations" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-map-location-dot pe-2"></i>
+                            Locations
+                        </a>
+                        <ul id="locations" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Add Region/State</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Regions/States</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Add City </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Cities </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#government" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-sitemap pe-2"></i>
+                            Organizations
+                        </a>
+                        <ul id="government" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Add Ministry </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Ministries</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Add Department </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Department</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        Authentication
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#roles" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-user-lock pe-2"></i>
+                            Roles & Users
+                        </a>
+                        <ul id="roles" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Create Role</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Roles </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{% url 'users:register' %}" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Create Users </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Users </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-regular fa-user pe-2"></i>
+                            Auth
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Forgot Password</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <form id="logout-form" method="post" action="{% url 'users:logout' %}" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                        <a href="#" class="sidebar-link" onclick="document.getElementById('logout-form').submit(); return false;"><i class="fa-solid fa-right-from-bracket pe-2"></i>Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown mx-3">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <i class="fa-solid fa-user fa-lg"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="#" class="dropdown-item">Setting</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted mx-3">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    Copyright &copy; <script>document.write(new Date().getFullYear());</script> Divergent Graphic & Web Development
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Home</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Tenders</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Blog</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+    <script src="{% static 'listings/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'listings/js/script.js'%}"></script>
+</body>
+
+</html>
+
+
