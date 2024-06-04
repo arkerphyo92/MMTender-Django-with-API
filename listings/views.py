@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
-from django.utils.html import escape
 from .forms import ListingTenderForm
-from .models import ListingTender
-from django.http import HttpResponseRedirect
+from .models import ListingTender, Department, City
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required, permission_required
+import logging
 
 # Create your views here.
 
@@ -18,14 +18,14 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 # For Dashboard Page
 
-@login_required(login_url='login')
+@login_required(login_url='frontend:login')
 def dashboard(request):
     tenders = ListingTender.objects.all().order_by('-created_at')
     return render(request, 'dashboard/admin/tenders.html', {'tenders': tenders})
 
 
 # For All Tenders Page from Tenders
-@login_required(login_url='login')
+@login_required(login_url='frontend:login')
 def tenders(request):
     tenders_list = ListingTender.objects.all().order_by('-created_at')
     paginator = Paginator(tenders_list, 10)  # Show 10 tenders per page
@@ -36,15 +36,14 @@ def tenders(request):
 
 
 # Add Tender Page from Tenders of Dashboard
-@login_required(login_url='login')
-@permission_required('listings.add_listingtender', login_url='login')
+@login_required(login_url='frontend:login')
+@permission_required('listings.add_listingtender', login_url='frontend:login')
 def add_tender(request):
     if request.method == "POST":
         form = ListingTenderForm(request.POST, request.FILES)
         if form.is_valid():
             updatetender = form.save(commit=False)
             updatetender.author = request.user
-            updatetender.description = escape(form.cleaned_data['description'])
             updatetender.save()
             #Use this return to avoid multiple submition from dashboard 1
             return HttpResponseRedirect(reverse('listings:add_tender') + '?success=true')
@@ -58,8 +57,8 @@ def add_tender(request):
     })
     
 
-@login_required(login_url='login')
-@permission_required('listings.change_listingtender', login_url='login')
+@login_required(login_url='frontend:login')
+@permission_required('listings.change_listingtender', login_url='frontend:login')
 def edit_tender(request, id):
     tender = get_object_or_404(ListingTender, pk=id)
     if request.method == "POST":        
@@ -67,7 +66,6 @@ def edit_tender(request, id):
         if form.is_valid():
             updatetender = form.save(commit=False)
             updatetender.author = request.user
-            updatetender.description = escape(form.cleaned_data['description'])
             updatetender.save()
             #Use this return to avoid multiple submition from dashboard 1
             return HttpResponseRedirect(reverse('listings:edit_tender', args=[id]) + '?success=true')
@@ -78,10 +76,11 @@ def edit_tender(request, id):
     return render(request, 'dashboard/admin/edit_tender.html', {
         'form': form,
         'success': success,
-        
+        'tender': tender        
     })
 
 
+@login_required(login_url='login')
 def delete_tender(request, id):
     if request.method == 'POST':
         tender = get_object_or_404(ListingTender, pk=id)
@@ -94,10 +93,6 @@ def delete_tender(request, id):
     return HttpResponseRedirect(reverse('listings:tenders'))
 # -------------------------------------------
 # -------------------------------------------
-
-
-import logging
-from django.http import HttpResponse
 
 
 logger = logging.getLogger(__name__)

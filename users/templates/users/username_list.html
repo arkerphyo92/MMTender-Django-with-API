@@ -1,0 +1,46 @@
+{% extends "dashboard/dashboard.html"%}
+
+{% block content %}
+<div class="col-md-12">		
+        <div class="card my-3">
+                <div class="card-header">Assigned Form for Users</div>
+                <div class="card-body">
+                    {% if success %} <!-- After successful submission, show this -->
+                        <div class="alert alert-success">
+                            Your assigned has been created successfully.
+                            <a href="{% url 'listings:tenders' %}">Go to the Dashboard</a>
+                        </div>
+                    {% else %}
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for field, errors in form.errors.items %}
+                                    {% for error in errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="card-body">
+                            <form action="{% url 'users:select_username' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="id_username">Username:</label>
+                                    <select class="form-control my-3" id="id_username" name="username_id">
+                                        {% for username in usernames %}
+                                            <option value="{{ username.id }}">{{ username.username }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary my-3">Assign Role</button>
+                                <a href="{% url 'users:users' %}" class="btn btn-secondary">Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>       
+        </div>
+{% endblock %}

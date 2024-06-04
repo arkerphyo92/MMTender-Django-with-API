@@ -1,0 +1,4 @@
+export DEBUG=1
+export PRODUCTION=0
+export SECRET_KEY='tender'
+export DJANGO_ALLOWED_HOSTS=* localhost 127.0.0.1[::1]

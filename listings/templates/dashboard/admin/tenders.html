@@ -132,7 +132,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-        <table class="table">
+        <table class="table table-hover" style="transition: 5s ease-in-out;">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -181,14 +181,14 @@
                                                 <ul class="list-group">
                                                     <li class="list-group-item">Start Date : {{tender.opendate}}</li>
                                                     <li class="list-group-item">Last Date : {{tender.closedate}}</li>
-                                                    <li class="list-group-item">Descripttion : {{tender.description|truncatewords:5}}</li>
+                                                    <li class="list-group-item">Description : {{tender.description|safe|truncatewords:5}}</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                  <form action="{% url 'tender_page' tender.id %}" method="post">
+                                  <form action="{% url 'frontend:tender_page' tender.slug %}" method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="page" value="{{ page_obj.number }}">
                                     <input type="submit" value="More Detail" class="btn btn-primary">

@@ -1,0 +1,54 @@
+{% extends "dashboard/dashboard.html"%}
+
+{% block content %}
+<div class="col-md-12">		
+        <div class="card my-3">
+                <div class="card-header">Assigned Form for {{user.username}}</div>
+                <div class="card-body">
+                    {% if success %} <!-- After successful submission, show this -->
+                        <div class="alert alert-success">
+                            Your assigned has been created successfully.
+                            <a href="{% url 'listings:tenders' %}">Go to the Dashboard</a>
+                        </div>
+                    {% else %}
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for field, errors in form.errors.items %}
+                                    {% for error in errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="card-body">
+                            <form action="{% url 'users:assign_group_id' user.id %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group mb-3">
+                                    <label class="my-3">Assigned Roles </label>
+                                    <div class="row mx-2 mb-5">
+                                        {% for group in allgroups %}
+                                            <div class="form-check col-md-4 col-sm-6">
+                                                <input class="form-check-input" type="checkbox" id="group{{ group.id }}" name="groups" value="{{ group.id }}" {% if group in user.groups.all %} checked {% endif %}>
+                                                <label class="form-check-label" for="group{{ group.id }}">{{ group.name }}</label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Assign Role</button>
+                                    <a href="{% url 'users:users' %}" class="btn btn-secondary">Cancel</a>
+                                </div>
+                            </form>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>       
+        </div>
+{% endblock %}

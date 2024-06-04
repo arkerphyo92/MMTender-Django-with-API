@@ -1,5 +1,6 @@
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,10 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+io(t@v#uhqk1$09or!h(x=4_e*#sbvw*fb!zj(fiwhri21g28'
+with open (os.path.join(BASE_DIR, 'secret_key.txt')) as f:
+    SECRET_KEY = f.read() .strip() 
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -29,7 +32,9 @@ INSTALLED_APPS = [
     'listings',
     'users',
     'frontend',
-    'ckeditor',
+    'django_ckeditor_5',
+    'api',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -149,28 +154,164 @@ LOGGING = {
 }
 
 # Attached File Security
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
 SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
 
-CKEDITOR_CONFIGS = {
+# HTTP Settings
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+# HSTS Settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+
+
+
+
+
+# 
+
+customColorPalette = [
+        {
+            'color': 'hsl(4, 90%, 58%)',
+            'label': 'Red'
+        },
+        {
+            'color': 'hsl(340, 82%, 52%)',
+            'label': 'Pink'
+        },
+        {
+            'color': 'hsl(291, 64%, 42%)',
+            'label': 'Purple'
+        },
+        {
+            'color': 'hsl(262, 52%, 47%)',
+            'label': 'Deep Purple'
+        },
+        {
+            'color': 'hsl(231, 48%, 48%)',
+            'label': 'Indigo'
+        },
+        {
+            'color': 'hsl(207, 90%, 54%)',
+            'label': 'Blue'
+        },
+    ]
+
+
+CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': [
-            ['Format', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'],
-            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink', 'Anchor'],
-            ['TextColor', 'BGColor'],  # Text and background color options
-            ['Table', 'HorizontalRule', 'SpecialChar'],
-            ['Source'],
-            ['Maximize'],
+            {'name': 'styles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat']},
+            {'name': 'blocks', 'items': ['NumberedList', 'BulletedList', '-', 'Blockquote']},
+            {'name': 'links', 'items': ['Link', 'Unlink']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {'name': 'tools', 'items': ['Maximize']},
         ],
-        'removePlugins': 'uploadimage,uploadfile',
-    }
+        'height': 300,
+        'width': '100%',
+    },
 }
-CKEDITOR_UPLOAD_PATH = 'tenders/ckeditor/'
+
+
+customColorPalette = [
+        {
+            'color': 'hsl(4, 90%, 58%)',
+            'label': 'Red'
+        },
+        {
+            'color': 'hsl(340, 82%, 52%)',
+            'label': 'Pink'
+        },
+        {
+            'color': 'hsl(291, 64%, 42%)',
+            'label': 'Purple'
+        },
+        {
+            'color': 'hsl(262, 52%, 47%)',
+            'label': 'Deep Purple'
+        },
+        {
+            'color': 'hsl(231, 48%, 48%)',
+            'label': 'Indigo'
+        },
+        {
+            'color': 'hsl(207, 90%, 54%)',
+            'label': 'Blue'
+        },
+    ],
+
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'link',
+                    'bulletedList', 'numberedList'],
+
+    },
+    'extends': {
+        'blockToolbar': [
+            'paragraph', 'heading1', 'heading2', 'heading3',
+            '|',
+            'bulletedList', 'numberedList',
+            '|',
+            'blockQuote',
+        ],
+        'toolbar': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
+        'code','subscript', 'superscript', 'highlight', 
+                    'bulletedList', 'numberedList', 
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',],
+        'skin': 'moono-dark',
+    },
+}
+
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'skin': 'moono',
+#         'toolbar_Basic': [
+#             ['-', 'Bold', 'Italic']
+#         ],
+#         'toolbar_YourCustomToolbarConfig': [
+#             {'name': 'basicstyles',
+#              'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+#             {'name': 'paragraph',
+#              'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+#                        'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl' ]},
+#             {'name': 'links', 'items': ['Link', 'Unlink']},
+#             '/',
+#             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+#             {'name': 'yourcustomtools', 'items': [
+#                 # put the name of your editor.ui.addButton here
+#                 'Preview',
+#             ]},
+#         ],
+#         'toolbar': 'YourCustomToolbarConfig',
+#         'tabSpaces': 4,
+#         'extraPlugins': ','.join([
+#             # 'uploadimage',  # Remove the upload image feature
+#             # Remove any other plugins related to file or image handling
+#             'div',
+#             'autolink',
+#             'autoembed',
+#             'embedsemantic',
+#             'autogrow',
+#             'widget',
+#             'lineutils',
+#             'clipboard',
+#             'dialog',
+#             'dialogui',
+#             'elementspath'
+#         ]),
+#     }
+# }
+
+CKEDITOR_UPLOAD_PATH = 'tenders/upload/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+}

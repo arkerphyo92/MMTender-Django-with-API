@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
-
+from django.contrib.auth.models import User, Group
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(required=True)
     address = forms.CharField(required=False,max_length=255)
@@ -44,3 +43,32 @@ class LoginForm(AuthenticationForm):
         super(LoginForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Enter Username'})
         self.fields['password'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Enter Password'})
+        
+
+
+
+class UserGroupForm(forms.Form):
+    username = forms.ModelChoiceField(queryset=User.objects.all(), required=True, widget=forms.Select(attrs={'class': 'form-control'}))
+    groups = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), required=True, widget=forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}))
+
+    class Meta:
+        model = User
+        fields = ['username', 'groups']
+        labels = {
+            'username': 'Username',
+            'groups': 'Assigned Groups',
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(UserGroupForm, self).__init__(*args, **kwargs)
+        self.fields['groups'].widget.attrs.update({'class': 'form-check-input'})  # Apply Bootstrap styling to checkboxes
+
+    def as_bootstrap_checkbox(self):
+        for _, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-check-input'
+        return self
+
+
+class UserGroupAssignmentForm(forms.Form):
+    group = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), required=True, widget=forms.CheckboxSelectMultiple(attrs={'class': 'form-control'}))
+    

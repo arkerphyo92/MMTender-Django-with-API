@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from listings.models import ListingTender
+from listings.models import ListingTender, Department, City
 from listings.forms import TenderSearchForm
 from django.core.paginator import Paginator
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from users.forms import RegisterForm, LoginForm
+from django.http import JsonResponse
 
 def index(request):
     tenders = ListingTender.objects.all().order_by('-created_at')
@@ -17,7 +18,7 @@ def tenders(request):
     paginator = Paginator(tenders_list, 10)  # Show 10 tenders per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    
+    count = tenders_list.count()
     # Initialize the search filter form
     form = TenderSearchForm(request.GET or None)
     if form.is_valid():
@@ -38,19 +39,21 @@ def tenders(request):
         if form.cleaned_data['city']:
             tenders_list = tenders_list.filter(city=form.cleaned_data['city'])
         
+        
         # Reinitialize paginator with filtered tender list
         paginator = Paginator(tenders_list, 10)
         page_obj = paginator.get_page(page_number)
     
     return render(request, 'frontend/tenders.html', {
         'page_obj': page_obj,
-        'form': form  # Pass the form to the template
+        'form': form, # Pass the form to the template
+        'count' : count,
     })
 
 
-def tender_page(request, id):
-    tender = get_object_or_404(ListingTender, pk=id)
-    
+def tender_page(request, slug):
+    tender = get_object_or_404(ListingTender, slug=slug)
+    print(tender.attimage.url)
     # Initialize the search filter form
     form = TenderSearchForm(request.GET or None)
     
@@ -62,11 +65,11 @@ def tender_page(request, id):
     
 def register(request):
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect('frontend:index')
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save() 
             auth_login(request, user)  # Log the user in after successful registration
             return redirect('listings:tenders')
     else:
@@ -76,7 +79,7 @@ def register(request):
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect('frontend:index')
     if request.method == 'POST':
         form = LoginForm(request, data = request.POST)
         if form.is_valid():
@@ -87,14 +90,15 @@ def login(request):
         form = LoginForm()
     return render(request, 'frontend/login.html', {'form': form})
 
+
 def logout(request):
     if request.method == 'POST':
         auth_logout(request)
-        return redirect('index')
-    return redirect('index')
+        return redirect('frontend:index')
+    return redirect('frontend:index')
 
 
-def tender_list(request):
+def tenders_search(request):
     tenders = ListingTender.objects.all()
     
     form = TenderSearchForm(request.GET or None)
@@ -116,9 +120,14 @@ def tender_list(request):
         if form.cleaned_data['city']:
             tenders = tenders.filter(city=form.cleaned_data['city'])
 
-    
+    count = tenders.count()
     paginator = Paginator(tenders, 10)  # Show 10 tenders per page.
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
-    return render(request, 'frontend/tenders.html', {'page_obj': page_obj, 'form': form})
+    return render(request, 'frontend/tenders.html', {
+        'page_obj': page_obj,
+        'form': form,
+        'count' : count
+        })
+    

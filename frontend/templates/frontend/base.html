@@ -89,10 +89,10 @@
 									<p>+95 99 7778 2924</p>
 								</li>
 								<li class="header-top-contact">
-									<a href="{% url 'login' %}"><p>sign in</p></a>
+									<a href="{% url 'frontend:login' %}"><p>sign in</p></a>
 								</li>
 								<li class="header-top-contact">
-									<a href="{% url 'register' %}"><p>register</p></a>
+									<a href="{% url 'frontend:register' %}"><p>register</p></a>
 								</li>
 							{% endif %}
 						</ul>
@@ -116,7 +116,7 @@
 			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 			                    <i class="fa fa-bars"></i>
 			                </button>
-			                <a class="navbar-brand" href="{% url 'index' %}">MYANMAR<span>TENDER</span></a>
+			                <a class="navbar-brand" href="{% url 'frontend:index' %}">MYANMAR<span>TENDER</span></a>
 
 			            </div><!--/.navbar-header-->
 			            <!-- End Header Navigation -->
@@ -124,8 +124,8 @@
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-			                    <li><a href="{% url 'index'%}">Home</a></li>
-			                    <li><a href="{% url 'tenders'%}">All Tenders</a></li>
+			                    <li><a href="{% url 'frontend:index'%}">Home</a></li>
+			                    <li><a href="{% url 'frontend:tenders'%}">All Tenders</a></li>
 			                    <li class="scroll"><a href="#blog">Blog</a></li>
 			                    <li class="scroll"><a href="#contact">Contact</a></li>
 			                </ul><!--/.nav -->
@@ -153,8 +153,8 @@
 			           	</div>
 			           	<div class="col-sm-9">
 			           		<ul class="footer-menu-item">
-			                    <li><a href="{% url 'index'%}">Home</a></li>
-			                    <li><a href="{% url 'tenders'%}">All Tenders</a></li>
+			                    <li><a href="{% url 'frontend:index'%}">Home</a></li>
+			                    <li><a href="{% url 'frontend:tenders'%}">All Tenders</a></li>
 			                    <li class="scroll"><a href="#blog">Blog</a></li>
 			                    <li class="scroll"><a href="#contact">Contact</a></li>
 			                </ul><!--/.nav -->

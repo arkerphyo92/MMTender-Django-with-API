@@ -1,10 +1,11 @@
-<div class="col-md-4" style="margin-top:80px">
-    <div class="single-explore-item">
-        <div class="single-explore-txt bg-theme-1">
-            <h2 class="explore-person"><a href="#">Search Form</a></h2>
+<div class="col-md-4">
+    <div class="single-explore-item" style="margin-top:16px;"> 
+        <div class="single-explore-txt">
+            <h2 class="explore" style="padding:0px;"><a href="#">Search Form</a></h2>
         </div>
         <div class="single-explore-txt bg-theme-1">
-            <form method="GET" action="{% url 'tender_list' %}">
+            <form method="GET" action="{% url 'frontend:tenders_search' %}">
+                {{ form.media }}
                 <div class="form-group">
                     {{ form.title.label_tag }}
                     {{ form.title }}

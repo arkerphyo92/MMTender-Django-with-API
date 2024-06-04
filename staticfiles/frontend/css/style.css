@@ -489,7 +489,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #df34ea;}
 --------------------------------------*/
 .explore{
     padding:117px 0 95px;
-    background: #f8fafb;
+
 }
 .explore-content{margin-top: 78px;}
 
@@ -1007,6 +1007,17 @@ nav.navbar.bootsnav .navbar-toggle i{color: #df34ea;}
     border: 1px solid #df34ea;
 }
 
+.pagination-container {
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.pagination-container .badge {
+    background-color: #df34ea;; /* Adjust the background color of the badge */
+}
+
 .center-card {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -1026,4 +1037,38 @@ a.favili:hover{
 
 a.favigp:hover{
     background-color: #db4a39;
+}
+
+
+.p-l-3 {
+    padding-left: 3px;
+}
+
+.p-r-3 {
+    padding-right: 15px;
+}
+
+.p-t-3 {
+    padding-top: 3px;
+}
+
+.p-b-3 {
+    padding-bottom: 3px;
+}
+
+/* Similarly, you can create classes for margin */
+.m-l-3 {
+    margin-left: 3px;
+}
+
+.m-r-3 {
+    margin-right: 3px;
+}
+
+.m-t-3 {
+    margin-top: 3px;
+}
+
+.m-b-3 {
+    margin-bottom: 3px;
 }

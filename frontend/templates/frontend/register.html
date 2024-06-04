@@ -35,13 +35,22 @@
                 <h3>Register</h3>
             </div>
             <div class="card-body">
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
                 {% if success %} <!-- After successful submission, show this -->
                     <div class="alert alert-success">
                         Your account has been created successfully.
                         <a href="{% url 'listings:tenders' %}">Go to the Dashboard</a>
                     </div>
                 {% else %}
-                    <form action="{% url 'register' %}" method="post">
+                    <form action="{% url 'frontend:register' %}" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button type="submit" class="btn btn-primary" style="margin-top:10px;">Register</button>

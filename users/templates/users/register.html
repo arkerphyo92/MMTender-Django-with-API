@@ -4,6 +4,17 @@
 <div class="col-md-12">		
         <div class="card my-3">
                 <div class="card-header">Registration Form for New Users</div>
+                {% if form.errors.items %}
+                    <div class="alert alert-danger">
+                        <ul>
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
                 <div class="card-body">
                     {% if success %} <!-- After successful submission, show this -->
                     <div class="alert alert-success">
@@ -13,7 +24,7 @@
                     {% else %}
                     <div class="row">
                         <div class="card-body">
-                            <form action="{% url 'register' %}" method="post">
+                            <form action="{% url 'users:register' %}" method="post">
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 <button type="submit" class="btn btn-primary">Register</button>

@@ -73,8 +73,8 @@
                   </div>
                   <div class="col-md-6 mb-3">
                       <div class="form-group">
-                          {{ form.closedate.label_tag }}
-                          {{ form.closedate }}
+                        {{ form.closedate.label_tag }}
+                        {{ form.closedate }}
                       </div>
                   </div>
               </div>
@@ -109,13 +109,13 @@
                   </div>
               </div>
               <div class="row">
-                  <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                          {{ form.description.label_tag }}
-                          {{ form.description }}
-                      </div>
-                  </div>
-              </div>
+                <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        {{ form.description.label_tag }}
+                        {{ form.description }}
+                    </div>
+                </div>
+            </div>
               <button type="submit" class="btn btn-primary">Submit</button>
               <a href="{% url 'listings:tenders' %}" class="btn btn-secondary">Cancel</a>
           </form>

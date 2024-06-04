@@ -215,3 +215,16 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     font-size: 0.875rem !important; /* Same as btn-sm font size */
     vertical-align: middle !important;
 }
+
+/* Custom CSS to change the background color of the editor */
+.ck.ck-editor__editable {
+    background-color: #580e0e; /* Change to your desired background color */
+}
+
+.ck-editor__editable {
+    color: #333; /* Change the color to your preferred text color */
+}
+
+.table {
+    transition: background-color 5s ease-in-out;
+}

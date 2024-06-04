@@ -22,7 +22,7 @@
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-item">
-                        <a href="{% url 'index' %}" target_blank="true" class="sidebar-link">
+                        <a href="{% url 'frontend:index' %}" target_blank="true" class="sidebar-link">
                             <i class="fa-solid fa-earth-americas pe-2"></i>
                             MM Tender Website
                         </a>
@@ -100,16 +100,13 @@
                         </a>
                         <ul id="roles" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Create Role</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Roles </a>
-                            </li>
-                            <li class="sidebar-item">
                                 <a href="{% url 'users:register' %}" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Create Users </a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Users </a>
+                                <a href="{% url 'users:select_username' %}" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-caret-right pe-2"></i> Assign Roles </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{% url 'users:users' %}" class="sidebar-link mx-3 akphover"><i class="fa-solid fa-list pe-2"></i> All Users </a>
                             </li>
                         </ul>
                     </li>
@@ -190,9 +187,10 @@
             </footer>
         </div>
     </div>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
     <script src="{% static 'listings/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'listings/js/script.js'%}"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,9 @@
+tender\wsgi.py
+tender\wsgi.stage.py
+tender\conf\stage.py
+tender\conf\dev.py
+requirements\dev.txt
+requirements\stage.txt
+manage.py
+manage.stage.py
+.env
