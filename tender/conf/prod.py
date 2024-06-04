@@ -1,5 +1,5 @@
+import dj_database_url
 from .common import *
-
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -14,12 +14,17 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default" : dj_database_url.parse("postgres://mmtender_database_user:F6sse1vE5tLNpwh9coZEoQEjzXTcmfxW@dpg-cpfj61tds78s739e3540-a.singapore-postgres.render.com/mmtender_database")
 }
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

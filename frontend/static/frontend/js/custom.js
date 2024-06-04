@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     locationField.addEventListener('change', function () {
         const locationId = locationField.value;
         if (locationId) {
-            fetch(`/api/departments/${locationId}/`)
+            fetch(`/api/cities/${locationId}/`)
                 .then(response => response.json())
                 .then(data => {
                     cityField.innerHTML = '';
