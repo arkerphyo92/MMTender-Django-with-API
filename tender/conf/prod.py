@@ -10,7 +10,7 @@ DEBUG = os.environ.get("DEBUG", 'False') == 'True' #To get the debug of env file
 PRODUCTION = os.environ.get("PRODUCTION", 'False') == 'True'
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 if not ALLOWED_HOSTS:
     raise ValueError("The DJANGO_ALLOWED_HOSTS environment variable is not set or empty.")
 
@@ -30,11 +30,10 @@ DATABASES = {
     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# if not DEBUG:
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
@@ -47,7 +46,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tenders'),
 ]
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
 
 
