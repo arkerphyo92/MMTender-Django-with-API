@@ -10,7 +10,7 @@ DEBUG = os.environ.get("DEBUG", 'False') == 'True' #To get the debug of env file
 PRODUCTION = os.environ.get("PRODUCTION", 'False') == 'True'
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 if not ALLOWED_HOSTS:
     raise ValueError("The DJANGO_ALLOWED_HOSTS environment variable is not set or empty.")
 
