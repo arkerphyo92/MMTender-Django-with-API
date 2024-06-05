@@ -262,7 +262,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #df34ea;}
     background-position:center;
     background-size:cover;
     text-align: center;
-    height:800px;
+    height:400px;
     z-index: 1;
 }
 .tenders-hero {
@@ -296,7 +296,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #df34ea;}
     background:rgba(30, 34, 41, 0.65);
     z-index: -1;
 }
-.welcome-hero-txt { padding-top: 155px;}
+.welcome-hero-txt { padding-top: 55px;}
 .tenders-hero-txt { padding-top: 55px;}
 
 .welcome-hero-txt h2 {
