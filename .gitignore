@@ -7,3 +7,6 @@ requirements\stage.txt
 manage.py
 manage.stage.py
 .env
+.newvenv
+tender/dba.sqlite3
+db.sqlite3

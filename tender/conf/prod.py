@@ -4,12 +4,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = 0
-PRODUCTION = 1
-ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+DEBUG = os.environ.get("DEBUG") #To get the debug of env file
+PRODUCTION = os.environ.get("PRODUCTION")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

@@ -79,17 +79,54 @@
                             <span class="explore-rating">512</span>
                             <a href="#"> {{ tender.type }}</a>
                             <span class="explore-price-box">
-                                last date
-                                <span class="explore-price">{{ tender.closedate }}</span>
+                                Fields : 
+                                <span class="explore-price">{{ tender.fields }}</span>
                             </span>
                             <span>by {{ tender.author }}</span>
                         </p>
                         <div class="explore-person">
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <p class="card-text flex-grow-1"><i class="fa-solid fa-earth-asia fv-lg"></i> State/Region: <strong>{{ tender.location }}</strong></p>
-                                    <p class="card-text flex-grow-1"><i class="fas fa-city fv-lg"></i> City: <strong>{{ tender.city }}</strong></p>
-                                    <p class="card-text flex-grow-1"><i class="fa-solid fa-clock fv-lg"></i> Tender Announced at <strong>{{ tender.opendate|date:"Y-m-d" }}</strong></p> 
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="panel panel-default" style="margin:0px;">
+                                        <div class="panel-body">
+                                            <p class="card-text flex-grow-1"><i class="fa-solid fa-earth-asia fv-lg"></i> State/Region : <strong>{{ tender.location }}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default" style="margin:0px;">
+                                        <div class="panel-body">
+                                            <p class="card-text flex-grow-1"><i class="fas fa-city fv-lg"></i> City : <strong>{{ tender.city }}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default" style="margin:0px;">
+                                        <div class="panel-body">
+                                            <p class="card-text flex-grow-1"><i class="fa-solid fa-clock fv-lg"></i> Tender Announced at <strong>{{ tender.opendate|date:"Y-m-d" }}</strong></p> 
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    {% if tender.source_ministry %}
+                                        <div class="panel panel-default" style="margin:0px;">
+                                            <div class="panel-body">
+                                                <p class="card-text flex-grow-1"><i class="fas fa-city fv-lg"></i> Ministry : <strong>{{ tender.source_ministry|truncatechars:35 }}</strong></p>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default" style="margin:0px;">
+                                            <div class="panel-body">
+                                                <p class="card-text flex-grow-1"><i class="fa-solid fa-people-group"></i> Department : <strong>{{ tender.department }}</strong></p>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                    <div class="panel panel-default" style="margin:0px;">
+                                        <div class="panel-body">
+                                            <p class="card-text flex-grow-1"><i class="fa-solid fa-people-group"></i> Company : <strong>{{ tender.source_company }}</strong></p>
+                                        </div>
+                                    </div>   
+                                    {% endif %}
+                                    <div class="panel panel-default" style="margin:0px;">
+                                        <div class="panel-body">
+                                            <p class="card-text flex-grow-1"><i class="fa-solid fa-clock fv-lg"></i> Tender Last Date <strong>{{ tender.closedate|date:"Y-m-d" }}</strong></p> 
+                                        </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
