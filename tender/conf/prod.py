@@ -1,12 +1,17 @@
+import os
 import dj_database_url
 from .common import *
 from dotenv import load_dotenv
+
 load_dotenv()
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = os.environ.get("DEBUG") #To get the debug of env file
-PRODUCTION = os.environ.get("PRODUCTION")
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+DEBUG = os.environ.get("DEBUG", 'False') == 'True' #To get the debug of env file
+PRODUCTION = os.environ.get("PRODUCTION", 'False') == 'True'
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
+if not ALLOWED_HOSTS:
+    raise ValueError("The ALLOWED_HOSTS environment variable is not set or empty.")
 
 
 # Database
@@ -20,9 +25,12 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 # }
 
 DATABASES = {
-    "default" : dj_database_url.parse("postgres://mmtender_database_user:F6sse1vE5tLNpwh9coZEoQEjzXTcmfxW@dpg-cpfj61tds78s739e3540-a.singapore-postgres.render.com/mmtender_database")
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
