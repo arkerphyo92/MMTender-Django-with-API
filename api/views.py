@@ -61,21 +61,18 @@ class CityList(APIView):
 #---- Training --------------------------------
 @api_view()
 def allapitenders(request):
-    tenders = ListingTender.objects.all()
     try:
-        ser = TestingSerializer(tenders)
-    except TestingSerializer.DoesNotExist:
+        tenders = ListingTender.objects.all()
+    except tenders.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
-    
-    return Response()
-        
-        
-    
+    ser = TestingSerializer(tenders, many=True)
+    return Response(ser.data)
 
+@api_view()
 def singleapitenders(request,id):
-    tender = ListingTender.objects.get(pk=id)
-    print(tender.title, tender.id, tender.type)
-    data = {
-        'title' : tender.title
-    }
-    return JsonResponse(data)
+    try:
+        tender = ListingTender.objects.get(pk=id)
+    except tender.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    ser = TestingSerializer(tender)   
+    return JsonResponse(ser.data)

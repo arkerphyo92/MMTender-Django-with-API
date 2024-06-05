@@ -18,7 +18,7 @@ class ListingTenderSerializer(serializers.ModelSerializer):
         
 
 class TestingSerializer(serializers.Serializer):
-    id = serializers.IntegerField(source='id',read_only=True)
+    id = serializers.IntegerField(read_only=True)
     title = serializers.CharField(source='source_ministry.name', read_only=True)
     department_name = serializers.CharField(source='department.name', read_only=True)
     location_name = serializers.CharField(source='location.name', read_only=True)
