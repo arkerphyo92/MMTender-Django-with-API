@@ -225,10 +225,6 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
     color: #333; /* Change the color to your preferred text color */
 }
 
-.table-hover tr {
-    transition: background-color 3s ease; /* Target rows, animate background color, duration 0.3s, ease timing function */
-  }
-  
-.table-hover tr:hover {
-    background-color: #e9ecef; /* Set your desired hover color */
-  }
+.table {
+    transition: background-color 5s ease-in-out;
+}
