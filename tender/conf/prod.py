@@ -13,6 +13,7 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
 if not ALLOWED_HOSTS:
     raise ValueError("The ALLOWED_HOSTS environment variable is not set or empty.")
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
