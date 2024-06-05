@@ -26709,3 +26709,510 @@ Not Found: /favicon.ico
 Not Found: /static/frontend/fonts/slick.woff
 Not Found: /static/frontend/fonts/slick.ttf
 Not Found: /favicon.ico
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\frontend\views.py", line 11, in index
+    return render(request, 'frontend/index.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+          ^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 203, in url
+    return self._url(self.stored_name, name, force)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 182, in _url
+    hashed_name = hashed_name_func(*args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 516, in stored_name
+    raise ValueError(
+ValueError: Missing staticfiles manifest entry for 'frontend/css/font-awesome.min.css'
+Not Found: /favicon.ico
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /static/frontend/css/ajax-loader.gif
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\frontend\views.py", line 11, in index
+    return render(request, 'frontend/index.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+          ^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 203, in url
+    return self._url(self.stored_name, name, force)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 182, in _url
+    hashed_name = hashed_name_func(*args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 516, in stored_name
+    raise ValueError(
+ValueError: Missing staticfiles manifest entry for 'frontend/css/font-awesome.min.css'
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\frontend\views.py", line 11, in index
+    return render(request, 'frontend/index.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+          ^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 203, in url
+    return self._url(self.stored_name, name, force)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 182, in _url
+    hashed_name = hashed_name_func(*args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 516, in stored_name
+    raise ValueError(
+ValueError: Missing staticfiles manifest entry for 'frontend/css/font-awesome.min.css'
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /static/frontend/css/ajax-loader.gif
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /static/frontend/css/ajax-loader.gif
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Internal Server Error: /tenders/web-service-for-thailand-real-estate/
+Traceback (most recent call last):
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\frontend\views.py", line 60, in tender_page
+    return render(request, 'frontend/tender_page.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+          ^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 203, in url
+    return self._url(self.stored_name, name, force)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 182, in _url
+    hashed_name = hashed_name_func(*args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 516, in stored_name
+    raise ValueError(
+ValueError: Missing staticfiles manifest entry for 'frontend/css/font-awesome.min.css'
+Not Found: /favicon.ico
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /tenders/web-service-for-thailand-real-estate/
+Traceback (most recent call last):
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\frontend\views.py", line 60, in tender_page
+    return render(request, 'frontend/tender_page.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\test\utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+          ^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 203, in url
+    return self._url(self.stored_name, name, force)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 182, in _url
+    hashed_name = hashed_name_func(*args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Learning\python\TenderAuthDesign\.newvenv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 516, in stored_name
+    raise ValueError(
+ValueError: Missing staticfiles manifest entry for 'frontend/css/font-awesome.min.css'
+Not Found: /favicon.ico
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/images/Slider-001_HsB4d0Y.jpg
+Not Found: /static/frontend/css/ajax-loader.gif
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+Not Found: /static/frontend/css/ajax-loader.gif
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /tenders/tenders/pdfs/Writing_YYNJfnJ.pdf
+Not Found: /favicon.ico
+Not Found: /static/frontend/css/font-awesome.min.css
+Not Found: /static/frontend/css/linearicons.css
+Not Found: /static/frontend/css/animate.css
+Not Found: /static/frontend/css/flaticon.css
+Not Found: /static/frontend/css/bootstrap.min.css
+Not Found: /static/frontend/css/slick.css
+Not Found: /static/frontend/css/bootsnav.css
+Not Found: /static/frontend/css/slick-theme.css
+Not Found: /static/frontend/css/style.css
+Not Found: /static/frontend/css/responsive.css
+Not Found: /static/frontend/js/bootstrap.min.js
+Not Found: /static/frontend/js/jquery.js
+Not Found: /static/frontend/js/bootsnav.js
+Not Found: /static/frontend/js/feather.min.js
+Not Found: /static/frontend/js/jquery.counterup.min.js
+Not Found: /static/frontend/js/waypoints.min.js
+Not Found: /static/frontend/js/slick.min.js
+Not Found: /static/frontend/js/custom.js
+Not Found: /static/frontend/images/explore/e2.jpg
+Not Found: /static/frontend/images/clients/c3.png
+Not Found: /static/frontend/images/clients/c1.png
+Not Found: /static/frontend/images/clients/c2.png
+Not Found: /static/frontend/images/blog/b2.jpg
+Not Found: /static/frontend/images/explore/e1.jpg
+Not Found: /static/frontend/images/clients/c4.png
+Not Found: /static/frontend/images/explore/e3.jpg
+Not Found: /static/frontend/images/explore/person.png
+Not Found: /static/frontend/images/blog/b1.jpg
+Not Found: /static/frontend/images/blog/b3.jpg
+Not Found: /static/frontend/js/jquery.js
+Not Found: /static/frontend/js/bootstrap.min.js
+Not Found: /static/frontend/css/font-awesome.min.css
+Not Found: /static/frontend/css/linearicons.css
+Not Found: /static/frontend/css/bootstrap.min.css
+Not Found: /static/frontend/css/animate.css
+Not Found: /static/frontend/css/flaticon.css
+Not Found: /static/frontend/css/slick.css
+Not Found: /static/frontend/css/slick-theme.css
+Not Found: /static/frontend/css/style.css
+Not Found: /static/frontend/css/bootsnav.css
+Not Found: /static/frontend/css/responsive.css
+Not Found: /static/frontend/js/jquery.js
+Not Found: /static/frontend/js/bootstrap.min.js
+Not Found: /static/frontend/js/bootsnav.js
+Not Found: /static/frontend/js/feather.min.js
+Not Found: /static/frontend/js/jquery.counterup.min.js
+Not Found: /static/frontend/js/waypoints.min.js
+Not Found: /static/frontend/js/slick.min.js
+Not Found: /static/frontend/js/custom.js
+Not Found: /static/frontend/images/blog/b3.jpg
+Not Found: /static/frontend/images/clients/c4.png
+Not Found: /static/frontend/images/explore/e2.jpg
+Not Found: /static/frontend/images/explore/e3.jpg
+Not Found: /static/frontend/images/clients/c3.png
+Not Found: /static/frontend/images/explore/person.png
+Not Found: /static/frontend/images/explore/e1.jpg
+Not Found: /static/frontend/images/clients/c1.png
+Not Found: /static/frontend/images/clients/c2.png
+Not Found: /static/frontend/images/blog/b1.jpg
+Not Found: /static/frontend/images/blog/b2.jpg
+Not Found: /static/frontend/js/jquery.js
+Not Found: /static/frontend/js/bootstrap.min.js
+Not Found: /static/frontend/js/bootsnav.js
+Not Found: /static/frontend/js/feather.min.js
+Not Found: /static/frontend/js/jquery.counterup.min.js
+Not Found: /static/frontend/js/waypoints.min.js
+Not Found: /static/frontend/js/slick.min.js
+Not Found: /static/frontend/js/custom.js
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /static/frontend/css/ajax-loader.gif
+Not Found: /static/frontend/fonts/slick.woff
+Not Found: /static/frontend/fonts/slick.ttf
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader

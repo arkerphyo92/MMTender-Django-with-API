@@ -30,11 +30,11 @@ DATABASES = {
     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
-    MEDIAFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# if not DEBUG:
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#     MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
+#     MEDIAFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

@@ -29,19 +29,21 @@ DATABASES = {
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 # if not DEBUG:
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 #     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#     MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
+#     MEDIAFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'tenders/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'tenders'),
+    os.path.join(BASE_DIR, 'static/'),
+    os.path.join(BASE_DIR, 'tenders/'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles/')
 
 
 # Log file Checker
