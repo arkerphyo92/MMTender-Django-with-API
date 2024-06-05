@@ -24197,3 +24197,8 @@ tag: DateTime (306) - type: string (2) Tag Location: 142 - Data Location: 214 - 
 tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xec'
 Not Found: /dashboard/tenders/image/customer-support.jpg
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Learning\python\TenderAuthDesign\tender\conf\dev.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Learning\python\TenderAuthDesign\tender\conf\common.py changed, reloading.
+Watching for file changes with StatReloader
