@@ -9,6 +9,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", 'False') == 'True' #To get the debug of env file
 PRODUCTION = os.environ.get("PRODUCTION", 'False') == 'True'
 
+# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(" ")
 if not ALLOWED_HOSTS:
     raise ValueError("The DJANGO_ALLOWED_HOSTS environment variable is not set or empty.")
@@ -50,19 +51,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
 
 
 
-# # Attached File Security
-# SECURE_BROWSER_XSS_FILTER = True
-# X_FRAME_OPTIONS = 'DENY'
-# SECURE_CONTENT_TYPE_NOSNIFF = True
+# Attached File Security
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# # HTTP Settings
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = True
+# HTTP Settings
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
-# # HSTS Settings
-# SECURE_HSTS_SECONDS = 31536000  # 1 year
-# SECURE_HSTS_PRELOAD = True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# HSTS Settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # 
