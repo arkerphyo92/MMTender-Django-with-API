@@ -1,4 +1,14 @@
-# Exported from Render on 2024-06-05T08:40:58Z
+# Exported from Render on 2024-06-05T09:24:12Z
+databases:
+- name: mmtender-database
+  databaseName: mmtender_database
+  user: mmtender_database_user
+  plan: free
+  region: singapore
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "16"
 services:
 - type: web
   name: MyanmarTender
