@@ -145,11 +145,19 @@
                     {% for user in page_obj %}
                   <tr>
                     <th scope="row">{{user.id}}</th>
-                    <td><a href="{% url 'users:assign_group_id' user.id %}">{{user.username}}</a></td>
-                    <td>{% if user.groups.all %}
+                    <td>
+                        {% if user.is_superuser %}
+                            {{user.username}}
+                        {% else %}
+                            <a href="{% url 'users:assign_group_id' user.id %}">{{user.username}}</a>
+                        {% endif %}
+                    </td>
+                    <td>{% if user.groups.all and user != user.is_superuser %}
                             {% for group in user.groups.all %}
                                 <span class="badge bg-primary">{{ group.name }}</span>
                             {% endfor %}
+                        {% elif user.is_superuser %}
+                            <p></p>
                         {% else %}
                             <span class="badge bg-primary">None</span>
                         {% endif %}
