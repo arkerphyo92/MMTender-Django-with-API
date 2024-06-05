@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = False
+DEBUG = True
 PRODUCTION = 0
 ALLOWED_HOSTS = [
   'localhost',
@@ -34,16 +34,15 @@ DATABASES = {
 #     MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles')
 #     MEDIAFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = 'static/'
-MEDIA_URL = 'tenders/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "assets"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-    os.path.join(BASE_DIR, 'tenders/'),
-]
+# Media files
+MEDIA_URL = '/tenders/'
+MEDIA_ROOT = BASE_DIR / "tenders"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'tendersfiles/')
+
 
 
 # Log file Checker
