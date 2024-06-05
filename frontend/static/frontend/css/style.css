@@ -403,6 +403,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #df34ea;}
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    height: 170px;
     background:#fff;
     border-radius: 3px;
     margin-right: 20px;
@@ -486,7 +487,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #df34ea;}
         7. Explore
 --------------------------------------*/
 .explore{
-    padding:117px 0 95px;
+    padding:10px 0 15px;
 
 }
 .explore-content{margin-top: 78px;}
